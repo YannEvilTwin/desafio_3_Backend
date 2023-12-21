@@ -1,5 +1,4 @@
-// Desafio 3 
-
+// Desafio 2
 const fs = require("fs").promises;
 
 class ProductManager {
@@ -66,8 +65,11 @@ class ProductManager {
     console.log("Producto agregado:", newProduct);
   }
 
-  // Método para obtener todos los productos
-  getProducts = () => this.products;
+// Método para obtener todos los productos
+getProducts() {
+  console.log("getProducts:", this.products);
+  return this.products;
+}
 
   // Método para obtener un producto por su id
   async getProductById(id) {
@@ -148,7 +150,7 @@ class ProductManager {
 }
 
 // Uso
-const manager = new ProductManager("./productos.json");
+/* const manager = new ProductManager("./productos.json");
 
 // Verifica que getProducts devuelva un arreglo vacío al inicio
 console.log("Productos al inicio:", manager.getProducts());
@@ -158,5 +160,9 @@ const nuevoProducto = {
   title: "Ejemplo",
   description: "Producto de ejemplo",
   price: 100,
-  img
+  img: "ruta_de_la_imagen.jpg" 
 }
+ */
+
+// Exporta la clase ProductManager
+module.exports = ProductManager;
