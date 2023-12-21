@@ -10,7 +10,7 @@ const app = express();
 const PUERTO = 8080;
 
 // Crea una instancia de ProductManager
-const productManager = new ProductManager('./productos.json');
+const productManager = new ProductManager('./src/productos.json');
 
 // Habilita el uso de JSON en las solicitudes
 app.use(express.json());
