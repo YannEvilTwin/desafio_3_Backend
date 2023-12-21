@@ -26,11 +26,10 @@ class ProductManager {
       // Actualiza el último id asignado basándose en los productos cargados
       ProductManager.ultId = this.products.reduce((maxId, product) => Math.max(maxId, product.id), 0) + 1;
     } catch (error) {
-      // Si hay un error al leer el archivo, se ignora y se continúa con un array vacío
+      // Si hay un error al leer o analizar el archivo, se ignora y se continúa con un array vacío
       this.products = [];
     }
   }
-
   // Método para agregar un nuevo producto al array y guardar en el archivo
   async addProduct(nuevoObjeto) {
     let { title, description, price, img, code, stock } = nuevoObjeto;
